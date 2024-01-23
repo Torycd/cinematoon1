@@ -1,6 +1,7 @@
 import { useState } from "react";
-
+// import { FaEye, FaBell, FaFolder } from "react-icons/fa";
 import croodImage from "../assets/croodscartoon.png";
+import ListNav from "./UI/ListNav";
 
 const HomePage = () => {
   const [showNav, setShowNav] = useState(false);
@@ -25,18 +26,15 @@ const HomePage = () => {
         <div className="border-2 border-[#2cb758] flex justify-center p-1 rounded-full w-[100px] my-4  mx-auto">
           <img src={croodImage} className="rounded-full w-full" alt="#" />
         </div>
-        <p className="font-medium text-center">Croods_Family</p>
-        <ul className="uppercase p-4">
-          <li className="p-4 font-bold flex">Home</li>
-          <li className="p-4 my-5 font-bold flex">Resources</li>
-          <li className="p-4 my-5 font-bold flex">Contacts</li>
+        <p className="font-bold text-center">Croods_Family</p>
+        <ListNav>
           <li
             className="p-4 font-bold flex"
             onClick={() => handleNav(setShowNav(!showNav))}
           >
             Cancel
           </li>
-        </ul>
+        </ListNav>
       </div>
     </div>
   );
