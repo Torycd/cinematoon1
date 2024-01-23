@@ -2,7 +2,7 @@
 
 const HomePage = () => {
   return (
-    <div className="h-full col-span-4 bg-slate-100">HomePage</div>
+    <div className="h-full col-span-8 bg-slate-50">HomePage</div>
   )
 }
 
