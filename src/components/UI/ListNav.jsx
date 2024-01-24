@@ -28,7 +28,7 @@ const ListNav = ({children}) => {
 }
 
 ListNav.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node
 }
 
 export default ListNav

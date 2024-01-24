@@ -1,7 +1,8 @@
 import { useState } from "react";
-// import { FaEye, FaBell, FaFolder } from "react-icons/fa";
+import { FaSearch } from "react-icons/fa";
 import croodImage from "../assets/croodscartoon.png";
 import ListNav from "./UI/ListNav";
+import Popular from "./Popular";
 
 const HomePage = () => {
   const [showNav, setShowNav] = useState(false);
@@ -9,13 +10,29 @@ const HomePage = () => {
     setShowNav(!showNav);
   };
   return (
-    <div className="h-screen col-span-10 md:col-span-8 bg-slate-50">
-      <div
-        className="border-2 border-[#2cb758] flex md:hidden justify-center p-1 rounded-full w-[50px] sm:w-[70px] m-4"
-        onClick={handleNav}
-      >
-        <img src={croodImage} className="rounded-full w-full" alt="#" />
+    <div className="h-screen col-span-10 md:col-span-6 lg:col-span-7 bg-slate-50">
+      <div className="flex justify-between">
+        <div
+          className="border-2 border-[#2cb758] flex md:hidden justify-center p-1 rounded-full w-[50px] sm:w-[70px] m-4"
+          onClick={handleNav}
+        >
+          <img src={croodImage} className="rounded-full w-full" alt="#" />
+        </div>
+        <div className="m-4">
+          <form className="flex my-auto border-2 border-[#2cb758] p-2 rounded-md  mr-3">
+            <input
+              type="search"
+              placeholder="Search..."
+              className="bg-slate-50 mr-2 focus:outline-none"
+            />
+            <label className="my-auto ">
+              <FaSearch className="text-[#2cb758]" size={20} />
+            </label>
+          </form>
+        </div>
       </div>
+
+      {/* the navigation works with state and wont show until when clicked*/}
       <div
         className={
           showNav
@@ -35,6 +52,10 @@ const HomePage = () => {
             Cancel
           </li>
         </ListNav>
+      </div>
+      {/* content of the Home page */}
+      <div className="mx-4">
+        <Popular/>
       </div>
     </div>
   );
