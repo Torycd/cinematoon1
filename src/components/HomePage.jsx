@@ -3,6 +3,7 @@ import { FaSearch } from "react-icons/fa";
 import croodImage from "../assets/croodscartoon.png";
 import ListNav from "./UI/ListNav";
 import Popular from "./Popular";
+import Discover from "./Discover";
 
 const HomePage = () => {
   const [showNav, setShowNav] = useState(false);
@@ -43,7 +44,7 @@ const HomePage = () => {
         <div className="border-2 border-[#2cb758] flex justify-center p-1 rounded-full w-[100px] my-4  mx-auto">
           <img src={croodImage} className="rounded-full w-full" alt="#" />
         </div>
-        <p className="font-bold text-center">Croods_Family</p>
+        <h2 className="font-bold text-center">Croods_Family</h2>
         <ListNav>
           <li
             className="p-4 font-bold flex"
@@ -56,6 +57,7 @@ const HomePage = () => {
       {/* content of the Home page */}
       <div className="mx-4">
         <Popular/>
+        <Discover/>
       </div>
     </div>
   );

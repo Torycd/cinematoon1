@@ -3,13 +3,13 @@ import { DUMMY_POPULAR } from './store/cartoon_product';
 const Popular = () => {
   return (
     <div>
-        <p className="text-bold mb-2 text-2xl">Popular</p>
+        <h2 className="text-bold mb-2 text-2xl">Popular</h2>
         <div className="grid gap-3 text-white font-bold md:grid-cols-3 ">
             {DUMMY_POPULAR.map((toon) => (
                 <div key={toon.id} className={toon.style}>
                 <img src={toon.image} className='rounded-md' alt="#"/>
-                <p className='mt-2'>{toon.title}</p>
-                <p>{toon.genre}</p>
+                <h2 className='mt-2'>{toon.title}</h2>
+                <h2>{toon.genre}</h2>
             </div>
             ))}
         </div>
