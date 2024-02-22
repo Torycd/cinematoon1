@@ -1,17 +1,17 @@
-import des from "../assets/des.jpeg";
-import { DUMMY_POPULAR } from "./store/cartoon_product";
+// import des from "../assets/des.jpeg";
+import { DUMMMY_DISCOVER } from "./store/cartoon_product";
 
 const Discover = () => {
   return (
     <div className="mt-6">
       <p className="mb-2 text-2xl">Discover</p>
-      <div className="grid md:grid-cols-3 gap-3">
+      <div className="grid md:grid-cols-3 gap-5">
       {/* items */}
-      {DUMMY_POPULAR.map((item) => (
-        <div className={item.image} key={item.idid}>
-          <img src={item.image} alt="#" className="object-cover h-full" />
-          <div className=" h-full">
-            <h2>{item.title}</h2>
+      {DUMMMY_DISCOVER.map((item) => (
+        <div className={item.style} key={item.id}>
+          <img src={item.image} alt="#" className=" rounded-sm w-[400px] h-[300px]" />
+          <div className="flex flex-col gap-4 h-full">
+            <h2 className="text-2xl">{item.title}</h2>
             <p >
               {item.info}
             </p>
