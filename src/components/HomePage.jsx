@@ -14,7 +14,7 @@ const HomePage = () => {
     <div className="h-full col-span-10 md:col-span-6 lg:col-span-7 bg-slate-50 overflow-hidden">
       <div className="flex justify-between">
         <div
-          className="border-2 border-[#2cb758] flex md:hidden justify-center p-1 rounded-full w-[50px] sm:w-[70px] m-4"
+          className="border-2 border-[#2cb758] flex md:hidden justify-center p-1 rounded-full w-[40px] h-[40px] sm:w-[50px] my-4 mx-4 sm:m-4 "
           onClick={handleNav}
         >
           <img src={croodImage} className="rounded-full w-full" alt="#" />
