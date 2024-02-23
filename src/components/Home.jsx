@@ -22,20 +22,28 @@ const Home = () => {
       const exisitingToonItem = updatedToon[exisitingToonIndex];
 
       if (exisitingToonItem) {
-        // if items alreadys exist in cart
-        return;
+        // if items alreadys exist in Cart
+        const updateToon = {
+          ...exisitingToonItem,
+          quantity: exisitingToonItem.quantity + 1
+        }
+        updatedToon[exisitingToonIndex] = updateToon
       } else {
+        // New Item in the Cart
         const toon1 = DUMMMY_DISCOVER.find((schToon) => schToon.id === id);
         const toon2 = DUMMY_POPULAR.find((schToon) => schToon.id === id);
         updatedToon.push({
           id: toon1.id || toon2.id,
           title: toon1.title || toon2.title,
-          image: toon1.image || toon2.image
+          image: toon1.image || toon2.image,
+          quantity: 1,
         });
       }
-    });
 
-    return;
+      return {
+        items: updatedToon,
+      };
+    });
   };
   const HanldesDeletingCartoon = () => {
     // handles deleting cartoon to the context
