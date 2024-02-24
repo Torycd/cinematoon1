@@ -25,19 +25,30 @@ const Home = () => {
         // if items alreadys exist in Cart
         const updateToon = {
           ...exisitingToonItem,
-          quantity: exisitingToonItem.quantity + 1
-        }
-        updatedToon[exisitingToonIndex] = updateToon
+          quantity: exisitingToonItem.quantity + 1,
+        };
+        updatedToon[exisitingToonIndex] = updateToon;
       } else {
         // New Item in the Cart
         const toon1 = DUMMMY_DISCOVER.find((schToon) => schToon.id === id);
         const toon2 = DUMMY_POPULAR.find((schToon) => schToon.id === id);
-        updatedToon.push({
-          id: toon1.id || toon2.id,
-          title: toon1.title || toon2.title,
-          image: toon1.image || toon2.image,
-          quantity: 1,
-        });
+        if (toon1) {
+          updatedToon.push({
+            id: toon1.id,
+            title: toon1.title,
+            image: toon1.image,
+            style: toon1.style,
+            quantity: 1,
+          });
+        } else if (toon2) {
+          updatedToon.push({
+            id: toon2.id,
+            title: toon2.title,
+            image: toon2.image,
+            style: toon2.style,
+            quantity: 1,
+          });
+        }
       }
 
       return {
@@ -45,6 +56,7 @@ const Home = () => {
       };
     });
   };
+  console.log(scheduleToon);
   const HanldesDeletingCartoon = () => {
     // handles deleting cartoon to the context
     return;
