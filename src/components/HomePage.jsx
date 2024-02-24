@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { Outlet } from "react-router-dom";
+
 import { FaSearch } from "react-icons/fa";
 import croodImage from "../assets/croodscartoon.png";
 import ListNav from "./UI/ListNav";
-import Popular from "./Popular";
-import Discover from "./Discover";
+// import Popular from "./Popular";
+// import Discover from "./Discover";
 
 const HomePage = () => {
   const [showNav, setShowNav] = useState(false);
@@ -56,8 +58,7 @@ const HomePage = () => {
       </div>
       {/* content of the Home page */}
       <div className="mx-4">
-        <Popular/>
-        <Discover/>
+        <Outlet />
       </div>
     </div>
   );
