@@ -56,15 +56,37 @@ const Home = () => {
       };
     });
   };
-  console.log(scheduleToon);
+  // console.log(scheduleToon);
   const HanldesDeletingCartoon = () => {
     // handles deleting cartoon to the context
     return;
   };
+  const HandleUpdateCartoon = (id, amount) => {
+    setSheduleToon((prevToon) => {
+      const updatedToon = [...prevToon.items];
+      const exisitingToonIndex = updatedToon.findIndex(
+        (ToonSchdeuled) => ToonSchdeuled.id === id
+      );
+      const updateToon = {
+        ...updatedToon[exisitingToonIndex]
+      }
+      updateToon.quantity += amount;
+      if (updateToon.quantity <= 0) {
+        updatedToon.splice(exisitingToonIndex, 1);
+      } else {
+        updatedToon[exisitingToonIndex] = updateToon;
+      }
+
+      return {
+        items: updatedToon,
+      };
+    })
+  }
   const cartoon = {
     items: scheduleToon.items,
     addCartoon2Cart: HandlesAddingCartoon,
     deleteCartoon: HanldesDeletingCartoon,
+    updateCartoon: HandleUpdateCartoon
   };
 
   return (

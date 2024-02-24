@@ -4,4 +4,5 @@ export const CartonnCtx = createContext({
   items: [],
   addCartoon2Cart: () => {},
   deleteCartoon: () => {},
+  updateCartoon: () => {}
 });
