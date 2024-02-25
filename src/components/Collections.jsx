@@ -14,18 +14,22 @@ const Collections = () => {
             <div>
               <span>{itm.quantity}</span>
             </div>
-            <div className="flex justify-around">
+            <div className="flex justify-around mb-2">
               <button
                 onClick={() => updateCartoon(itm.id, 1)}
-                className=" bg-white text-xl md:text-2xl text-black w-[30px] h-[30px] rounded-full hover:scale-105 ease-in-out"
+                className=" bg-white w-10 h-10 text-black text-xl rounded-full hover:scale-105 ease-in-out"
               >
-                <span>+</span>
+                <span className="flex justify-center text-center">
+                  <p className="self-center">+</p>
+                </span>
               </button>
               <button
                 onClick={() => updateCartoon(itm.id, -1)}
-                className=" bg-white text-xl md:text-2xl text-black w-[30px] h-[30px] rounded-full hover:scale-105 ease-in-out"
+                className=" bg-white w-10 h-10 text-black text-xl rounded-full hover:scale-105 ease-in-out"
               >
-                <span className="m-auto">-</span>
+                <span className="flex justify-center text-center">
+                  <p className="self-center">-</p>
+                </span>
               </button>
             </div>
           </div>
