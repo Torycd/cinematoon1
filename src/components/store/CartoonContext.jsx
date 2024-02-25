@@ -59,9 +59,21 @@ export function CartoonContextProvider({ children }) {
     });
   };
   // console.log(scheduleToon);
-  const HanldesDeletingCartoon = () => {
+  const HanldesDeletingCartoon = (id) => {
     // handles deleting cartoon to the context
-    return;
+    setSheduleToon((prevToon) => {
+      const updatedToon = [...prevToon.items];
+      const exisitingToonIndex = updatedToon.findIndex(
+        (ToonSchdeuled) => ToonSchdeuled.id === id
+      );
+      updatedToon.splice(exisitingToonIndex, 1)
+      
+      return {
+        items: updatedToon,
+      };
+      
+      // const exisitingToonItem = updatedToon[exisitingToonIndex];
+    });
   };
   const HandleUpdateCartoon = (id, amount) => {
     setSheduleToon((prevToon) => {

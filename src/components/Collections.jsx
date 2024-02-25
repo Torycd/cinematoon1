@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { CartonnCtx } from "./store/CartoonContext";
 
 const Collections = () => {
-  const { items, updateCartoon } = useContext(CartonnCtx);
+  const { items, updateCartoon, deleteCartoon } = useContext(CartonnCtx);
   return (
     <div className="h-dvh">
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
@@ -32,6 +32,7 @@ const Collections = () => {
                 </span>
               </button>
             </div>
+            <button onClick={() => deleteCartoon(itm.id)}>Delete</button>
           </div>
         ))}
       </div>
